@@ -1,0 +1,19 @@
+[package]
+name = "fleetmanager"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.29"
+egui_extras = "0.29"
+rusqlite = { version = "0.32", features = ["bundled"] }
+chrono = "0.4"
+argon2 = "0.5"
+rfd = "0.15"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
